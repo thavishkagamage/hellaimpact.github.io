@@ -286,44 +286,75 @@
             }
         }
 
-
-        .top-btn {
+        .m-backtotop {
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            position: fixed;
+            bottom: -50px;
+            right: 20px;
             width: 50px;
             height: 50px;
-            background: #fff;
-            color: #000;
+            background: #222;
+            border-radius: 25px;
             text-align: center;
-            border-radius: 10px;
-            position: fixed;
-            bottom: 10px;
-            right: 30px;
-            cursor: pointer;
-            font-size: 18px;
-            line-height: 50px;
-            z-index: 999;
-            transition: .5s;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            overflow: hidden;
+            color: #fff;
         }
-        .top-btn:hover{
-            color: white;
+        .m-backtotop.active {
+            bottom: 15px;
+            opacity: 1;
         }
-        .top-btn::before {
+        .m-backtotop > div {
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        .m-backtotop > div.arrow {
             position: absolute;
-            content: '';
-            width: 100%;
-            height: 0;
-            background: #000;
-            color: white;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            z-index: -1;
-            border-radius: 10px;
-            transition: .5s;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            opacity: 1;
         }
-        .top-btn:hover::before {
-            height: 100%;
-            color: white;
+        .m-backtotop > div.text {
+            font-size: 5px;
+            font-size: 0.5rem;
+            line-height: 10px;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-family: "Open Sans", sans-serif;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateY(50%) translateX(-50%);
+            opacity: 0;
+            margin-top: 1px;
         }
+        .m-backtotop:hover {
+            transform: scale(1.1);
+            bottom: 20px;
+            cursor: pointer;
+            background: black;
+            color: white !important;
+            box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+        }
+        .m-backtotop:hover > div.arrow {
+            transform: translateY(-150%) translateX(-50%);
+            opacity: 0;
+        }
+        .m-backtotop:hover > div.text {
+            transform: translateY(-50%) translateX(-50%);
+            opacity: 1;
+        }
+
 
     </style>
 </head>
@@ -966,8 +997,14 @@
         <hr class="m-5">
         <p style="color: white; text-align: center; font-weight: 100;">Created by Thavihska D.T. Gamage</p>
     </footer>
-    <div class="top-btn">
-        <i class="fas fa-arrow-up"></i>
+    <!--BACK TO TOP BUTTON-->
+    <div class="m-backtotop" aria-hidden="true">
+        <div class="arrow">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+        <div class="text">
+            Back to top
+        </div>
     </div>
 
 </body>
@@ -1000,24 +1037,32 @@
     });
 
 
-    $(window).load(function (){
-        $('.top-btn').fadeOut();
+    //Make sure the user has scrolled at least double the height of the browser
+    var toggleHeight = $(window).outerHeight() * 2;
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > toggleHeight) {
+            //Adds active class to make button visible
+            $(".m-backtotop").addClass("active");
+
+            //Just some cool text changes
+            $('h1 span').text('TA-DA! Now hover it and hit dat!')
+
+        } else {
+            //Removes active class to make button visible
+            $(".m-backtotop").removeClass("active");
+
+            //Just some cool text changes
+            $('h1 span').text('(start scrolling)')
+        }
     });
 
-    $(window).scroll(function () {
-        if ($(this).scrollTop() != 0) {
-            $('.top-btn').fadeIn();
-        }
-        else {
-            $('.top-btn').fadeOut();
-        }
-    });
 
-    $('.top-btn').click(function(){
-        $("html, body").animate({ scrollTop: 0 }, 900);
+    //Scrolls the user to the top of the page again
+    $(".m-backtotop").click(function() {
+        $("html, body").animate({ scrollTop: 0 }, "fast");
         return false;
     });
-
  
 </script>
 
