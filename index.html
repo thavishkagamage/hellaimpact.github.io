@@ -20,12 +20,12 @@
     <link rel="stylesheet" href="card.css">
     <script src="Include/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
     <script src="js/bootstrap.min.js"></script>
     <script src="Include/jquery.rwdImageMaps.min.mjs"></script>
     <link rel="stylesheet" href="Include/Font.css">
 
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 
     <style>
         body,
@@ -245,6 +245,8 @@
             font-size: 100px;
             margin-top: 10px;
             text-align: center;
+            font-weight: normal;
+            font-family: 'Russo One', sans-serif;
         }
 
         .hella-para {
@@ -255,6 +257,7 @@
             transform: translate(-50%, -50%);
             font-size: 20px;
             text-align: center;
+            font-weight: normal;
         }
 
         @media only screen and (max-width: 600px) {
@@ -267,6 +270,8 @@
                 font-size: 60px;
                 margin-top: 10px;
                 text-align: center;
+                font-weight: normal;
+                font-family: 'Russo One', sans-serif;
             }
         }
 
@@ -279,6 +284,7 @@
                 transform: translate(-50%, -50%);
                 font-size: 15px;
                 text-align: center;
+                font-weight: normal;
             }
         }
 
@@ -373,24 +379,24 @@
             opacity: 1;
         }
 
-        .carousel-custom {
-            max-height: 700px;
-            min-height: 700px;
-        }
+        /*.carousel-custom {*/
+        /*    max-height: 700px;*/
+        /*    min-height: 700px;*/
+        /*}*/
 
-        @media only screen and (max-width: 1115px) {
-            .carousel-custom {
-                max-height: 500px;
-                min-height: 500px;
-            }
-        }
+        /*@media only screen and (max-width: 1115px) {*/
+        /*    .carousel-custom {*/
+        /*        max-height: 500px;*/
+        /*        min-height: 500px;*/
+        /*    }*/
+        /*}*/
 
-        @media only screen and (max-width: 860px) {
-            .carousel-custom {
-                max-height: 300px;
-                min-height: 300px;
-            }
-        }
+        /*@media only screen and (max-width: 860px) {*/
+        /*    .carousel-custom {*/
+        /*        max-height: 300px;*/
+        /*        min-height: 300px;*/
+        /*    }*/
+        /*}*/
 
     </style>
 </head>
@@ -427,11 +433,11 @@
 
 </div>
 
-
+<hr>
 <div class="container-fluid">
     <a id="about"></a>
     <div class="row justify-content-center"
-         style="margin: 1cm; color: white; font: bold 14px/1.4 'Open Sans', arial, sans-serif;line-height: 50px; font-size: 20px;">
+         style="margin: 1cm; color: white; font: 14px/1.4 'Open Sans', arial, sans-serif;line-height: 50px; font-size: 20px;">
         <p style="font-size: 30px;">About</p>
         <hr>
         <br>
@@ -596,7 +602,7 @@
 
 <div class="container-fluid col-sm-8">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators" style="bottom:-50px; !important;">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -605,24 +611,39 @@
         </ol>
         <div class="carousel-inner carousel-custom">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="images/Rover/5B090BB9-BEC8-486E-A8FB-3C8A798AF576.png"
+                <img class="d-block w-100" style="height: 500px !important;" src="images/Rover/5B090BB9-BEC8-486E-A8FB-3C8A798AF576.png"
                      alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <p>Entry, Descent and Landing (EDL)</p>
+                </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="images/Rover/ACBCFF5F-6E01-4C78-BC49-AEBE540E81AC.png"
+                <img class="d-block w-100" style="height: 500px !important;" src="images/Rover/ACBCFF5F-6E01-4C78-BC49-AEBE540E81AC.png"
                      alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <p style="color: black">Rover</p>
+                </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="images/Rover/ECC122AD-BC23-4305-AC70-D83EB8132B7E_1_105_c.jpeg"
+                <img class="d-block w-100" style="height: 500px !important;" src="images/Rover/ECC122AD-BC23-4305-AC70-D83EB8132B7E_1_105_c.jpeg"
                      alt="Third slide">
+                <div class="carousel-caption d-none d-md-block" style="margin-bottom: -40px">
+                    <p style="color: black">Heat Shield</p>
+                </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="images/Rover/2279EE15-6FBB-4092-8D24-88970C38F36C.png"
+                <img class="d-block w-100" style="height: 500px !important;" src="images/Rover/2279EE15-6FBB-4092-8D24-88970C38F36C.png"
                      alt="Forth slide">
+                <div class="carousel-caption d-none d-md-block" style="margin-bottom: -50px">
+                    <p style="color: black">Airbag “Petal” Structure</p>
+                </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="images/Rover/28DD0E1C-F0CC-4299-860A-11F7C46ED1A5.png"
+                <img class="d-block w-100" style="height: 500px !important;" src="images/Rover/28DD0E1C-F0CC-4299-860A-11F7C46ED1A5.png"
                      alt="Fifth slide">
+                <div class="carousel-caption d-none d-md-block" style="margin-right: -300px">
+                    <p style="color: black">Aeroshell</p>
+                </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -788,7 +809,7 @@
 
 
             <div class="row ml-5"
-                 style=" color: white; font: bold 14px/1.4 'Open Sans', arial, sans-serif; font-size: 20px;">
+                 style=" color: white; font: 14px/1.4 'Open Sans', arial, sans-serif; font-size: 20px;">
 
                 <p>This section is an overview of our complete PDR. The slides found were used in our presentation.
                     Click
@@ -800,7 +821,7 @@
                 </a>
             </div>
             <div class="row ml-5 mb-4"
-                 style=" color: white; font: bold 14px/1.4 'Open Sans', arial, sans-serif; font-size: 20px;">
+                 style=" color: white; font: 14px/1.4 'Open Sans', arial, sans-serif; font-size: 20px;">
 
                 <p>You can view a video of our presentation here:</p>
             </div>
@@ -1095,15 +1116,14 @@
 
 </div>
 
-
-<footer class="mt-5 mb-5">
+<hr class="m-5">
 
     <div class="container">
 
         <img src="images/Footer.png" alt="Footer" width="100%">
 
     </div>
-    <hr class="m-5">
+
     <p style="color: white; text-align: center; font-weight: 100;">Created by Thavihska D.T. Gamage</p>
 </footer>
 <!--BACK TO TOP BUTTON-->
