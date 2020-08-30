@@ -1215,20 +1215,19 @@
 
     $(document).ready(function (e) {
         $('img[image-map]').rwdImageMaps();
-        // window.scrollTo(0, 0);
     });
 
-    // function applyBeforeunload() {
-    //     $(window).on('beforeunload', function() {
-    //         $('body').hide();
-    //         $(window).scrollTop(0);
-    //     });
-    // }
-    // applyBeforeunload();
-    // $(document).on('click', '[samepage]', function() {
-    //     $(window).off('beforeunload');
-    //     setTimeout(applyBeforeunload, 1000);
-    // });
+    function applyBeforeunload() {
+        $(window).on('beforeunload', function() {
+            $('body').hide();
+            $(window).scrollTop(0);
+        });
+    }
+    applyBeforeunload();
+    $(document).on('click', '[samepage]', function() {
+        $(window).off('beforeunload');
+        setTimeout(applyBeforeunload, 1000);
+    });
 
     //Make sure the user has scrolled at least double the height of the browser
     var toggleHeight = $(window).outerHeight() * 2;
