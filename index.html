@@ -233,6 +233,7 @@
         .sidenav {
             width: 300px;
             position: sticky;
+            padding-top: 50px !important;
             z-index: 1;
             top: 20px;
             left: 10px;
@@ -455,6 +456,25 @@
         .m-backtotop:hover > div.text {
             transform: translateY(-50%) translateX(-50%);
             opacity: 1;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 100%, 100%;
+            background-image: none;
+        }
+
+        .carousel-control-next-icon:after
+        {
+            content: '>';
+            font-size: 20px;
+            color: black;
+        }
+
+        .carousel-control-prev-icon:after {
+            content: '<';
+            font-size: 20px;
+            color: black;
         }
 
         /*.carousel-custom {*/
