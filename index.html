@@ -344,6 +344,11 @@
             }
         }
 
+        .footer-text {
+            font-weight: normal !important;
+            font-size: 10px !important;
+        }
+
         @media only screen and (max-width: 700px) {
             .footer-text {
                 font-weight: normal !important;
@@ -1171,7 +1176,7 @@
 
     </div>
 
-    <p class="footer-text" style="color: white; text-align: center; font-weight: 100;">Created by Thavihska D.T. Gamage using Javascript, CSS, HTML and PHP</p>
+    <p class="footer-text" style="color: white; text-align: center; margin-bottom: 75px; margin-top: 75px;">Created by Thavihska D.T. Gamage using Javascript, CSS, HTML and PHP</p>
 </footer>
 <!--BACK TO TOP BUTTON-->
 <div class="m-backtotop" aria-hidden="true">
@@ -1210,20 +1215,20 @@
 
     $(document).ready(function (e) {
         $('img[image-map]').rwdImageMaps();
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
     });
 
-    function applyBeforeunload() {
-        $(window).on('beforeunload', function() {
-            $('body').hide();
-            $(window).scrollTop(0);
-        });
-    }
-    applyBeforeunload();
-    $(document).on('click', '[samepage]', function() {
-        $(window).off('beforeunload');
-        setTimeout(applyBeforeunload, 1000);
-    });
+    // function applyBeforeunload() {
+    //     $(window).on('beforeunload', function() {
+    //         $('body').hide();
+    //         $(window).scrollTop(0);
+    //     });
+    // }
+    // applyBeforeunload();
+    // $(document).on('click', '[samepage]', function() {
+    //     $(window).off('beforeunload');
+    //     setTimeout(applyBeforeunload, 1000);
+    // });
 
     //Make sure the user has scrolled at least double the height of the browser
     var toggleHeight = $(window).outerHeight() * 2;
